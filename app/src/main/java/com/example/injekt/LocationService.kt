@@ -11,7 +11,7 @@ public interface LocationService {
 
 public class LocationServiceImpl(private val manager: LocationManager,
                                  private val provider: String) : LocationService {
-    val logger by Delegates.injectLogger<LocationService,Logger>()
+    val logger: Logger by Delegates.injectLogger("Location[${provider}]")
     init {
         logger.info("Created location manager")
     }

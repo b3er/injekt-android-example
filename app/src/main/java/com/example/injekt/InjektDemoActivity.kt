@@ -16,7 +16,7 @@ public class InjektDemoActivity() : AppCompatActivity() {
     private val button by Delegates.lazy { findViewById(R.id.button) }
     private val text by Delegates.lazy { findViewById(R.id.text) as TextView }
     //logger
-    private val logger by Delegates.injectLogger<InjektDemoActivity, Logger>()
+    private val logger: Logger by Delegates.injectLogger()
     //default location service
     private val locationService by Delegates.injectLazy<LocationService>()
 
