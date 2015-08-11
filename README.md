@@ -1,2 +1,2 @@
 # injekt-android-example
-Example using Injekt with android
+Example using Injekt library (https://github.com/kohesive/injekt) with android
