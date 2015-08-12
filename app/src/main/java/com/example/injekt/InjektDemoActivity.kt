@@ -30,10 +30,10 @@ public class InjektDemoActivity() : AppCompatActivity() {
         val location = locationService.getLocation()
         text.setText("${Injekt.get<DateFormat>().format(Date())}\n")
         text.append("Location: ${location.first}, ${location.second}")
-        saveLastLocation(location = location)
+        saveLastLocation(location)
     }
 
-    private fun saveLastLocation(prefs: SharedPreferences = Injekt.get(getLocalClassName()), location: Pair<String, String>) {
+    private fun saveLastLocation(location: Pair<String, String>, prefs: SharedPreferences = Injekt.get(getLocalClassName())) {
         logger.info("Saving location $location")
         with(prefs.edit()) {
             putString("location_lat", location.first)
